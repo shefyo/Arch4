@@ -99,6 +99,8 @@ class PostViewModel @Inject constructor(
             _dataState.value = FeedModelState()
         } catch (e: Exception) {
             _dataState.value = FeedModelState(error = true)
+        } finally {
+            _dataState.value = FeedModelState(refreshing = false)
         }
     }
 
